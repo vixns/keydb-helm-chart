@@ -5,8 +5,8 @@
 ## TL;DR;
 
 ```bash
-helm repo add enapter https://enapter.github.io/charts/
-helm install keydb enapter/keydb
+helm repo add keydb-helm https://fniko.github.io/keydb-helm-chart/
+helm install keydb keydb-helm/keydb
 ```
 
 ## Introduction
@@ -89,8 +89,8 @@ exec keydb-server /etc/keydb/redis.conf \
 To install the chart
 
 ```bash
-helm repo add enapter https://enapter.github.io/charts/
-helm install keydb enapter/keydb
+helm repo add keydb-helm https://fniko.github.io/keydb-helm-chart/
+helm install keydb keydb-helm/keydb
 ```
 
 ## Configuration
