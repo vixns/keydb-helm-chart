@@ -1,22 +1,5 @@
-# Rollout release
+# Info
+This is a forked version of KeyDB Helm Chart by Enapter [https://github.com/Enapter/charts].
+Since the repository was by the owner on Jun 6, 2023, it is now read-only and I 
+was missing some features, I have decided to do a fork.
 
-## New KeyDB release example
-
-### Package new release in .tgz
-
-```console
-helm package ./keydb/ --destination ./.deploy/
-```
-
-### Upload the release to Github
-
-```console
-helm-cr upload --skip-existing --config ~/.cr.yaml
-```
-
-### Update index.yaml
-
-```console
-git checkout gh-pages
-helm-cr index --config ~/.cr.yaml -i ./index.yaml -c https://enapter.github.io/charts/
-```
