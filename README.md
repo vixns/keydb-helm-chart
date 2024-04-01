@@ -1,3 +1,5 @@
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/keydb-helm)](https://artifacthub.io/packages/search?repo=keydb-helm)
+
 # Info
 This is a forked version of KeyDB Helm Chart by Enapter [https://github.com/Enapter/charts].
 Since the repository was by the owner on Jun 6, 2023, it is now read-only and I 
