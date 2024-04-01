@@ -19,5 +19,5 @@ maintainers:
 sources:
 - https://github.com/fniko/keydb-helm-chart/tree/master/charts/keydb
 - https://github.com/Snapchat/KeyDB
-icon: https://github.com/fniko/keydb-helm-chart/blob/17f1a5a4c5c20fd2c0306c0975585affcb34a9e3/icon.png
+icon: https://raw.githubusercontent.com/fniko/keydb-helm-chart/17f1a5a4c5c20fd2c0306c0975585affcb34a9e3/icon.png
 appVersion: 6.3.4
