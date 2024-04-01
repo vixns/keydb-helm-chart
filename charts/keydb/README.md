@@ -13,6 +13,11 @@ helm install keydb enapter/keydb
 
 This chart bootstraps a [KeyDB](https://keydb.dev) highly available multi-master statefulset in a [Kubernetes](http://kubernetes.io) cluster using the Helm package manager.
 
+## 1.0.1 Upgrade notice
+- Added custom podLabels
+- Added Github Workflow release automation
+- Renamed templates in order to be more clear
+
 ## 0.40.1 Upgrade notice
 
 As the chart is not yet production ready (0.x) backward incompatible changes can be introduced in minor releases.
