@@ -2,7 +2,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 imageRepository: eqalpha/keydb
-imageTag: x86_64_v6.3.2
+imageTag: x86_64_v6.3.4
 imagePullPolicy: IfNotPresent
 imagePullSecrets: []
 
@@ -24,6 +24,8 @@ protectedMode: "no"
 appendonly: "no"
 
 annotations: {}
+
+podLabels: {}
 
 configExtraArgs: []
   # - somesimple: "argument"
