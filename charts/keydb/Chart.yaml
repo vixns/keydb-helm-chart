@@ -17,7 +17,7 @@ maintainers:
   name: Filip Niko
   url: https://github.com/fniko
 sources:
-- https://github.com/fniko/keydb-helm-chart
+- https://github.com/fniko/keydb-helm-chart/tree/master/charts/keydb
 - https://github.com/Snapchat/KeyDB
-icon: https://github.com/fniko/keydb-helm-chart/icon.pgn
+icon: https://github.com/fniko/keydb-helm-chart/icon.png
 appVersion: 6.3.4
