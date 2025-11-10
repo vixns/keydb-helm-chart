@@ -149,11 +149,11 @@ spec:
         {{- else if kindIs "slice" $value }}
         - --{{ $key }}
         {{- range $value }}
-        - {{ . }}
+        - {{ . | quote }}
         {{- end }}
         {{- else }}
         - --{{ $key }}
-        - {{ $value }}
+        - {{ $value | quote }}
         {{- end }}
         {{- end }}
         {{- end }}
