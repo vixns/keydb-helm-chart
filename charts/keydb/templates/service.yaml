@@ -16,6 +16,7 @@ spec:
     {{- if .Values.service.appProtocol.enabled }}
     appProtocol: redis
     {{- end }}
+  {{- if .Values.exporter.enabled }}
   - name: {{ .Values.exporter.portName | quote }}
     port: {{ .Values.exporter.port | int }}
     protocol: TCP
@@ -23,6 +24,7 @@ spec:
     {{- if .Values.service.appProtocol.enabled }}
     appProtocol: http
     {{- end }}
+  {{- end }}
   selector:
     {{- include "keydb.selectorLabels" . | nindent 4 }}
   sessionAffinity: ClientIP
