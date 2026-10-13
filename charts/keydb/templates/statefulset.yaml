@@ -69,8 +69,10 @@ spec:
         {{- else }}
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-          # One second longer than command timeout should prevent generation of zombie processes.
-          timeoutSeconds: {{ add1 .Values.livenessProbe.timeoutSeconds }}
+          # keydb-server is PID 1 and does not reap. A kubelet SIGKILL leaves the
+          # probe shell as a zombie, so the kubelet deadline stays well above the
+          # script's own timeout.
+          timeoutSeconds: {{ add .Values.livenessProbe.timeoutSeconds 10 }}
           successThreshold: {{ .Values.livenessProbe.successThreshold }}
           failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
           exec:
@@ -87,8 +89,10 @@ spec:
         {{- else }}
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
-          # One second longer than command timeout should prevent generation of zombie processes.
-          timeoutSeconds: {{ add1 .Values.readinessProbe.timeoutSeconds }}
+          # keydb-server is PID 1 and does not reap. A kubelet SIGKILL leaves the
+          # probe shell as a zombie, so the kubelet deadline stays well above the
+          # script's own timeout.
+          timeoutSeconds: {{ add .Values.readinessProbe.timeoutSeconds 10 }}
           successThreshold: {{ .Values.readinessProbe.successThreshold }}
           failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
           exec:
@@ -104,8 +108,10 @@ spec:
           {{- toYaml .Values.startupProbe.custom | nindent 10 }}
         {{- else }}
           periodSeconds: {{ .Values.startupProbe.periodSeconds }}
-          # One second longer than command timeout should prevent generation of zombie processes.
-          timeoutSeconds: {{ add1 .Values.startupProbe.timeoutSeconds }}
+          # keydb-server is PID 1 and does not reap. A kubelet SIGKILL leaves the
+          # probe shell as a zombie, so the kubelet deadline stays well above the
+          # script's own timeout.
+          timeoutSeconds: {{ add .Values.startupProbe.timeoutSeconds 10 }}
           failureThreshold: {{ .Values.startupProbe.failureThreshold }}
           exec:
             command:
